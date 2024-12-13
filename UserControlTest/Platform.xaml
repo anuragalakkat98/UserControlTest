@@ -1,0 +1,138 @@
+<UserControl
+    x:Class="UserControlTest.Platform"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UserControlTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="PlatformUserControl"
+    Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Width}"
+    Height="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Height}">
+
+    <Viewbox Stretch="Uniform">
+        <!-- Symbol 1 (PLATFORM UP): Chevrons on the left, label on the right -->
+      <Grid>
+            <Grid Background="Black" Visibility="{Binding DataContext.PlatformUpVisibility, ElementName=PlatformUserControl}">
+                <!-- Outer Rectangle -->
+                <Border BorderThickness="3" BorderBrush="White" Padding="5" Width="400">
+                    <Border BorderThickness="3" BorderBrush="White" Padding="3">
+                        <!-- Main Content -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Chevrons with Visibility "Collapsed"-->
+                            <Grid Grid.Column="0" Padding="30 4 200 5" Visibility="Collapsed">
+                                <Canvas Background="Black">
+                                    <!-- Rectangles -->
+                                    <Rectangle Stroke="White" StrokeThickness="1" Fill="Transparent" Width="20" Height="60" Canvas.Left="15" Canvas.Top="0" />
+                                    <Rectangle Stroke="White" StrokeThickness="1" Fill="Transparent" Width="20" Height="60" Canvas.Left="50" Canvas.Top="0" />
+                                    <!-- Chevrons -->
+                                    <Path Stroke="White" Fill="Transparent" StrokeThickness="1">
+                                        <Path.Data>
+                                            <PathGeometry>
+                                                <!-- First Chevron (Left-pointing) -->
+                                                <PathFigure StartPoint="40,0" IsClosed="true">
+                                                    <PolyLineSegment Points="20,30 40,60 20,60 0,30 20,0" />
+                                                </PathFigure>
+                                                <!-- Second Chevron (Left-pointing) -->
+                                                <PathFigure StartPoint="80,0" IsClosed="true">
+                                                    <PolyLineSegment Points="60,30 80,60 60,60 40,30 60,0" />
+                                                </PathFigure>
+                                                <!-- Third Chevron (Right-pointing) -->
+                                                <PathFigure StartPoint="90,0" IsClosed="true">
+                                                    <PolyLineSegment Points="110,30 90,60 110,60 130,30 110,0" />
+                                                </PathFigure>
+                                                <!-- Fourth Chevron (Right-pointing) -->
+                                                <PathFigure StartPoint="130,0" IsClosed="true">
+                                                    <PolyLineSegment Points="150,30 130,60 150,60 170,30 150,0" />
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                            </Grid>
+
+                            <!-- Text with Rectangle -->
+                            <Grid Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!-- Rectangle with Visibility "Collapsed" -->
+                                <Rectangle Stroke="White" StrokeThickness="1" Fill="Transparent" Visibility="Collapsed"/>
+                                <!--<TextBlock FontWeight="Bold" Text="No.2" FontSize="50" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+                                <TextBlock FontWeight="Bold" 
+                                           Text="{Binding DataContext.PlatformUpLabelText, ElementName=PlatformUserControl}"
+                                           FontSize="50" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center" />
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Border>
+        </Grid>
+
+        <!-- Symbol 2 (PLATFORM DOWN): Label on the left, chevrons on the right -->
+            <Grid Background="Black" Visibility="{Binding DataContext.PlatformDownVisibility, ElementName=PlatformUserControl}">
+                <!-- Outer Rectangle -->
+                <Border BorderThickness="3" BorderBrush="White" Padding="5" Width="400">
+                    <Border BorderThickness="3" BorderBrush="White" Padding="3">
+                        <!-- Main Content -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Text with Rectangle -->
+                            <Grid Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!-- Rectangle with Visibility "Collapsed" -->
+                                <Rectangle Stroke="White" StrokeThickness="1" Fill="Transparent" Visibility="Collapsed"/>
+                                <!--<TextBlock FontWeight="Bold" Text="No.2" FontSize="50" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" />-->
+                                <TextBlock FontWeight="Bold" 
+                                           Text="{Binding DataContext.PlatformDownLabelText, ElementName=PlatformUserControl}"
+                                           FontSize="50" 
+                                           Foreground="White" 
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center" />
+                            </Grid>
+
+                            <!-- Chevrons with Visibility "Collapsed" -->
+                            <Grid Grid.Column="1" Padding="30 4 200 5" Visibility="Collapsed">
+                                <Canvas Background="Black">
+                                    <!-- Rectangles  -->
+                                    <Rectangle Stroke="White" StrokeThickness="1" Fill="Transparent" Width="20" Height="60" Canvas.Left="100" Canvas.Top="0" />
+                                    <Rectangle Stroke="White" StrokeThickness="1" Fill="Transparent" Width="20" Height="60" Canvas.Left="135" Canvas.Top="0" />
+                                    <!-- Chevrons -->
+                                    <Path Stroke="White" Fill="Transparent" StrokeThickness="1">
+                                        <Path.Data>
+                                            <PathGeometry>
+                                                <!-- First Chevron (Left-pointing) -->
+                                                <PathFigure StartPoint="40,0" IsClosed="true">
+                                                    <PolyLineSegment Points="20,30 40,60 20,60 0,30 20,0" />
+                                                </PathFigure>
+                                                <!-- Second Chevron (Left-pointing) -->
+                                                <PathFigure StartPoint="80,0" IsClosed="true">
+                                                    <PolyLineSegment Points="60,30 80,60 60,60 40,30 60,0" />
+                                                </PathFigure>
+                                                <!-- Third Chevron (Right-pointing) -->
+                                                <PathFigure StartPoint="90,0" IsClosed="true">
+                                                    <PolyLineSegment Points="110,30 90,60 110,60 130,30 110,0" />
+                                                </PathFigure>
+                                                <!-- Fourth Chevron (Right-pointing) -->
+                                                <PathFigure StartPoint="130,0" IsClosed="true">
+                                                    <PolyLineSegment Points="150,30 130,60 150,60 170,30 150,0" />
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Border>
+        </Grid>
+        </Grid>
+    </Viewbox>
+</UserControl>
