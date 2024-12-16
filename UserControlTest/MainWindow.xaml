@@ -11,12 +11,6 @@
 
     <StackPanel Orientation="Vertical" Background="Black">
 
-        <!--<local:Platform 
-            PlatformUpVisibility="Collapsed" 
-            PlatformDownVisibility="Visible" 
-            PlatformUpLabelText="No.1" 
-            PlatformDownLabelText="No.2" />-->
-
         <local:Platform Height="600" Width="600"/>
 
     </StackPanel>
