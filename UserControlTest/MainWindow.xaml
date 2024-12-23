@@ -11,7 +11,12 @@
 
     <StackPanel Orientation="Vertical" Background="Black">
 
-        <local:Platform Height="600" Width="600"/>
+        <!--<local:Platform Height="600" Width="600"/>-->
+
+        <!--<local:TrackDiamondDirection Height="700" Width="700"/>-->
+
+        <local:TrackLegDirection Height="400" Width="400"/>
+
 
     </StackPanel>
 

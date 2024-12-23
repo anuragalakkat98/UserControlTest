@@ -1,0 +1,129 @@
+<UserControl
+    x:Class="UserControlTest.TrackDiamondDirection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UserControlTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="TrackDiamondDirectionUserControl"
+    Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Width}"
+    Height="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Height}"
+    >
+
+    <Viewbox Stretch="Uniform">
+        <Grid>
+            <!-- START -->
+            <!--User controls available-->
+            <!--Track Diamond Down-Up-->
+            <!--Track Diamond Down-Down-->
+            <Canvas x:Name="TrackDiamondDownCanvas" Width="{Binding DataContext.CanvasWidth, ElementName=TrackDiamondDirectionUserControl}"
+                                                    Height="{Binding DataContext.CanvasHeight, ElementName=TrackDiamondDirectionUserControl}" 
+                                                    HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center" 
+                                                    Visibility="{Binding DataContext.TrackDiamondDownControlsVisibility, ElementName=TrackDiamondDirectionUserControl}">
+                <!--Control visibility of above mentioned controls-->
+                <!-- Polygons inside the Grid can be collapsed all together, matching the default view in UIC -->
+                <Grid x:Name="TrackDiamondDownGrid" Visibility="{Binding DataContext.TrackDiamondDownElementVisibility, ElementName=TrackDiamondDirectionUserControl}">
+                    <!-- First polygon on the left -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                         Points="20,50 50,50 140,230 110,230" Margin="-83,0,0,0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!-- Second polygon on the left -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                         Points="20,50 50,50 140,230 110,230" Margin="-52,0,0,0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!-- First polygon on the right -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                         Points="20,50 50,50 140,230 110,230" Margin="72,0,0,0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!-- Second polygon on the right -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                         Points="20,50 50,50 140,230 110,230" Margin="103,0,0,0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                </Grid>
+                <!-- Center Polygon resembling the TRACK -->
+                <Polygon Stroke="White" Fill="White" StrokeThickness="2"
+                     Points="0,50 90,50 180,230 90,230">
+                    <Polygon.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <!-- Increase height -->
+                    </Polygon.RenderTransform>
+                </Polygon>
+            </Canvas>
+            <!-- END -->
+
+            <!--START-->
+            <!--User controls available-->
+            <!--Track Diamond Up-Up-->
+            <!--Track Diamond Up-Down-->
+            <Canvas x:Name="TrackDiamondUpCanvas" Width="{Binding DataContext.CanvasWidth, ElementName=TrackDiamondDirectionUserControl}"
+                                                  Height="{Binding DataContext.CanvasHeight, ElementName=TrackDiamondDirectionUserControl}"
+                                                  HorizontalAlignment="Center" 
+                                                  VerticalAlignment="Center" 
+                                                  Visibility="{Binding DataContext.TrackDiamondUpControlsVisibility, ElementName=TrackDiamondDirectionUserControl}">
+                <!--Control visibility of above mentioned controls-->
+                <!-- Polygons inside the Grid can be collapsed all together, matching the default view in UIC -->
+                <Grid x:Name="TrackDiamondUpGrid" Visibility="{Binding DataContext.TrackDiamondUpElementVisibility, ElementName=TrackDiamondDirectionUserControl}">
+                    <!-- First polygon on the left -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                        Points="160,50 190,50 110,230 80,230" Margin="-133 0 0 0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!-- Second polygon on the left -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                        Points="160,50 190,50 110,230 80,230" Margin="-102 0 0 0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!-- Third polygon on the left -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                        Points="160,50 190,50 110,230 80,230" Margin="32 0 0 0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <!-- Forth polygon on the left -->
+                    <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                        Points="160,50 190,50 110,230 80,230" Margin="62 0 0 0">
+                        <Polygon.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <!-- Increase height -->
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                </Grid>
+                <!-- Center Polygon resembling the TRACK -->
+                <Polygon Stroke="White" Fill="White" StrokeThickness="2"
+                        Points="90,50 190,50 110,230 10,230">
+                    <Polygon.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        <!-- Increase height -->
+                    </Polygon.RenderTransform>
+                </Polygon>
+            </Canvas>
+            <!--END-->
+        </Grid>
+    </Viewbox>
+</UserControl>
