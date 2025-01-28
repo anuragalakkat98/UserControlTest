@@ -13,10 +13,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Authority.xaml" />
+    <None Remove="Intruder.xaml" />
+    <None Remove="LevelCrossing.xaml" />
     <None Remove="Platform.xaml" />
+    <None Remove="SingleTrain.xaml" />
     <None Remove="Track.xaml" />
     <None Remove="TrackDiamondDirection.xaml" />
     <None Remove="TrackLegDirection.xaml" />
+    <None Remove="TrackNew.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +49,31 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="TrackNew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Authority.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="SingleTrain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Intruder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="LevelCrossing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="TrackLegDirection.xaml">

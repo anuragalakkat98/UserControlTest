@@ -1,0 +1,355 @@
+<UserControl
+    x:Class="UserControlTest.LevelCrossing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UserControlTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="LevelCrossingUserControl"
+    Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Width}"
+    Height="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Height}">
+
+    <!-- Ensure the shape scales with the control size -->
+    <Viewbox Stretch="Uniform">
+        <Grid>
+            <!--START: Level Crossing Pedestrian Crossing on Track-->
+            <Canvas x:Name="LevelCrossingCanvas1"
+                    Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}" 
+                    Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}" 
+                    Visibility="{Binding DataContext.PedestrianCrossingOnTrackVisibility, ElementName=LevelCrossingUserControl}">
+                <!--Top rectangle-->
+                <Rectangle
+                    Canvas.Left="40"
+                    Canvas.Top="1"
+                    Width="20"
+                    Height="30"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+                <!--Left rectangle-->
+                <Rectangle
+                    Canvas.Left="1"
+                    Canvas.Top="30"
+                    Width="40"
+                    Height="60"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+                <!--Middle rectangle-->
+                <Rectangle
+                    Canvas.Left="40"
+                    Canvas.Top="30"
+                    Width="20"
+                    Height="60"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+                <!--Right rectangle-->
+                <Rectangle
+                    Canvas.Left="59"
+                    Canvas.Top="30"
+                    Width="40"
+                    Height="60"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+                <!--Bottom rectangle-->
+                <Rectangle
+                    Canvas.Left="40"
+                    Canvas.Top="89"
+                    Width="20"
+                    Height="30"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+            </Canvas>
+            <!--END: Level Crossing Pedestrian Crossing on Track-->
+
+            <!--START: Level Crossing Road Crossing On Track-->
+            <Canvas x:Name="LevelCrossingCanvas2"
+                    Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}" 
+                    Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}" 
+                    Visibility="{Binding DataContext.RoadCrossingOnTrackVisibility, ElementName=LevelCrossingUserControl}">
+
+                <!--Left rectangle-->
+                <Rectangle
+                    Canvas.Left="40"
+                    Canvas.Top="30"
+                    Width="20"
+                    Height="170"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+
+                <!--Right rectangle-->
+                <Rectangle
+                    Canvas.Left="80"
+                    Canvas.Top="30"
+                    Width="20"
+                    Height="170"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    Fill="White" />
+            </Canvas>
+            <!--END: Level Crossing Road Crossing On Track-->
+
+            <!-- START: Level Crossing Pedestrian Crossing Head -->
+            <Canvas x:Name="LevelCrossingCanvas3"
+                    Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}"
+                    Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}"
+                    Visibility="{Binding DataContext.PedestrianCrossingHeadVisibility, ElementName=LevelCrossingUserControl}">
+
+                <!-- "V" Shape Path -->
+                <Path Stroke="White"
+                      StrokeThickness="2"
+                      Fill="White"
+                      Data="
+                          M 125,120
+                          L 45,35
+                          L 65,25
+                          L 140,105
+                          L 220,25
+                          L 240,35
+                          L 155,120
+                          L 145,120
+                          Z"
+                         RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TranslateTransform X="-60" Y="-10" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <!-- Bottom Rectangle -->
+                <Rectangle Stroke="White"
+                           StrokeThickness="2"
+                           Fill="White"
+                           Canvas.Left="125"
+                           Canvas.Top="120"
+                           Width="30"
+                           Height="60"
+                           RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-60" Y="-10" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+            </Canvas>
+            <!-- END: Level Crossing Pedestrian Crossing Head -->
+
+            <!-- START: Level Crossing Pedestrian Crossing Tail-->
+            <Canvas x:Name="LevelCrossingCanvas4"
+                    Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}"
+                    Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}"
+                    Visibility="{Binding DataContext.PedestrianCrossingTailVisibility, ElementName=LevelCrossingUserControl}"
+                    RenderTransformOrigin="0.6,0.6">
+
+                <Canvas.RenderTransform>
+                    <!-- Change Angle to alter rotation -->
+                    <RotateTransform Angle="180" />
+                </Canvas.RenderTransform>
+
+                <!-- "V" Shape Path -->
+                <Path Stroke="White"
+                      StrokeThickness="2"
+                      Fill="White"
+                      Data="
+                            M 125,120
+                            L 45,35
+                            L 65,25
+                            L 140,105
+                            L 220,25
+                            L 240,35
+                            L 155,120
+                            L 145,120
+                            Z"
+                            RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TranslateTransform X="-60" Y="-50" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <!-- Bottom Rectangle -->
+                <Rectangle Stroke="White"
+                           StrokeThickness="2"
+                           Fill="White"
+                           Canvas.Left="125"
+                           Canvas.Top="120"
+                           Width="30"
+                           Height="60"
+                           RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-60" Y="-50" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Canvas>
+            <!-- END: Level Crossing Pedestrian Crossing Tail -->
+
+
+            <!-- START: Level Crossing Head -->
+            <Canvas x:Name="LevelCrossingCanvas5"
+        Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}"
+        Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}"
+        Visibility="{Binding DataContext.LevelCrossingHeadVisibility, ElementName=LevelCrossingUserControl}">
+
+                <Path Stroke="White"
+      StrokeThickness="2"
+      Fill="White"
+      Data="
+        M 110,120
+        L 60,60
+        L 90,30
+        L 140,95
+        L 190,30
+        L 220,60
+        L 170,120
+        L 130,120
+        Z
+      " RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TranslateTransform X="-60" Y="-10" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <!-- Bottom Rectangle -->
+                <Rectangle Stroke="White"
+           StrokeThickness="2"
+           Fill="White"
+           Canvas.Left="110"
+           Canvas.Top="120"
+           Width="60"
+           Height="100"
+           RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-60" Y="-10" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Canvas>
+            <!-- END: Level Crossing Head -->
+
+
+            <!-- START: Level Crossing Body -->
+            <Canvas x:Name="LevelCrossingCanvas6"
+        Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}"
+        Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}"
+        Visibility="{Binding DataContext.LevelCrossingBodyVisibility, ElementName=LevelCrossingUserControl}">
+
+                <Rectangle Stroke="White"
+StrokeThickness="2"
+Fill="Transparent"
+Canvas.Left="125"
+Canvas.Top="120"
+Width="100"
+Height="120"
+RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-20" Y="-120" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+
+
+                <Rectangle Stroke="White"
+               StrokeThickness="2"
+               Fill="Transparent"
+               Canvas.Left="125"
+               Canvas.Top="120"
+               Width="40"
+               Height="60"
+               RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-80" Y="1" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+            </Canvas>
+            <!-- END: Level Crossing Body -->
+
+
+            <!-- START: Level Crossing Tail -->
+            <Canvas x:Name="LevelCrossingCanvas7"
+  Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}"
+  Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}"
+  Visibility="{Binding DataContext.LevelCrossingTailVisibility, ElementName=LevelCrossingUserControl}"
+                        RenderTransformOrigin="0.6,0.6">
+
+                <Canvas.RenderTransform>
+                    <!-- Change Angle to alter rotation -->
+                    <RotateTransform Angle="180" />
+                </Canvas.RenderTransform>
+
+                <Path Stroke="White"
+StrokeThickness="2"
+Fill="White"
+Data="
+  M 110,120
+  L 60,60
+  L 90,30
+  L 140,95
+  L 190,30
+  L 220,60
+  L 170,120
+  L 130,120
+  Z
+" RenderTransformOrigin="0.5,0.5">
+                    <Path.RenderTransform>
+                        <TranslateTransform X="-60" Y="-80" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <!-- Top Rectangle -->
+                <Rectangle Stroke="White"
+     StrokeThickness="2"
+     Fill="White"
+     Canvas.Left="110"
+     Canvas.Top="120"
+     Width="60"
+     Height="100"
+     RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-60" Y="-80" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Canvas>
+            <!-- END: Level Crossing Tail -->
+
+
+            <!-- START: Level Crossing Pedestrian Crossing Body -->
+            <Canvas x:Name="LevelCrossingCanvas8"
+        Width="{Binding DataContext.CanvasWidth, ElementName=LevelCrossingUserControl}"
+        Height="{Binding DataContext.CanvasHeight, ElementName=LevelCrossingUserControl}"
+        Visibility="{Binding DataContext.LevelCrossingPedestrianCrossingBodyVisibility, ElementName=LevelCrossingUserControl}"
+        >
+                <Rectangle Stroke="White"
+               StrokeThickness="2"
+               Fill="White"
+               Canvas.Left="125"
+               Canvas.Top="60"
+               Width="30"
+               Height="200"
+               RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-60" Y="-50" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+                <Rectangle Stroke="White"
+StrokeThickness="2"
+Fill="Transparent"
+Canvas.Left="125"
+Canvas.Top="60"
+Width="80"
+Height="40"
+RenderTransformOrigin="0.5,0.5"
+                           Visibility="{Binding DataContext.LevelCrossingPedestrianCrossingBodyElementVisibility, ElementName=LevelCrossingUserControl}">
+                    <Rectangle.RenderTransform>
+                        <TranslateTransform X="-10" Y="20" />
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+            </Canvas>
+            <!-- END: Level Crossing Pedestrian Crossing Body -->
+
+
+        </Grid>
+    </Viewbox>
+</UserControl>

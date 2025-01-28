@@ -15,7 +15,7 @@
 
         <!--<local:TrackDiamondDirection Height="700" Width="700"/>-->
 
-        <local:TrackLegDirection Height="400" Width="400"/>
+        <local:TrackNew Height="400" Width="400"/>
 
 
     </StackPanel>

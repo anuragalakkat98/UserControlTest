@@ -13,7 +13,10 @@
     >
 
     <Viewbox Stretch="Uniform">
-        <Grid Margin="0 370 100 0">
+
+        <Grid>
+        
+        <Grid Margin="0 370 100 0" Visibility="Collapsed">
             <Canvas x:Name="TrackLegLeftUpCanvas1" Width="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}" Height="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}">
                 <!--Elements under this canvas should be collpased to get the design to match the UIC default view-->
                 <Canvas x:Name="TrackLegLeftUpCanvas2" Visibility="{Binding DataContext.TrackLegLeftUpElementsVisibility, ElementName=TrackLegDirectionUserControl}">
@@ -61,7 +64,7 @@
                 </Canvas>
 
                 <!--Main Track with white color matching UIC default view-->
-                <Polygon Stroke="White" Fill="White" StrokeThickness="2"
+                <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
                         Points="0,0 160,2 250,230 90,230">
                     <Polygon.RenderTransform>
                         <TransformGroup>
@@ -72,9 +75,150 @@
                 </Polygon>
 
                 <!--Main Track with white color matching UIC default view-->
-                <Rectangle Width="500" Height="120" Stroke="White" StrokeThickness="2" Fill="White" 
+                <Rectangle Width="500" Height="120" Stroke="White" StrokeThickness="2" Fill="Transparent" 
                       Visibility="Visible" Margin="0 30 0 0"/>
             </Canvas>
+        </Grid>
+
+        <Grid Margin="0 100 500 0" Visibility="Collapsed">
+            <Canvas x:Name="TrackLegLeftDownCanvas1"
+            Width="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}"
+            Height="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}">
+
+                <!--Elements under this canvas should be collpased to get the design to match the UIC default view-->
+                <Canvas x:Name="TrackLegLeftDownCanvas2"
+                Visibility="{Binding DataContext.TrackLegLeftDownElementsVisibility, ElementName=TrackLegDirectionUserControl}">
+                    <Canvas>
+                        <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                    Points="190,-30 434,-28 325,230 90,230" Canvas.Left="-175" Canvas.Top="59"/>
+                    </Canvas>
+
+                    <Canvas>
+                        <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                    Points="183,150 219,150 187,230 148,230" Canvas.Left="1" Canvas.Top="59"/>
+                    </Canvas>
+
+                    <Canvas>
+                        <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+                    Points="190,-57 234,-58 125,230 80,230" Canvas.Left="-210" Canvas.Top="59"/>
+                    </Canvas>
+
+                    <Rectangle Width="415" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+                       Margin="205,206,0,0"/>
+
+                    <Rectangle Width="500" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+                       Margin="120,30,0,0"/>
+
+                    <Rectangle Width="500" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+                       Margin="120,178,0,0"/>
+
+                    <Rectangle Width="620" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+                       Margin="0,1,0,0"/>
+                </Canvas>
+
+                <!--Main Track with white color matching UIC default view-->
+                <Canvas>
+                    <Polygon Stroke="White" Fill="White" StrokeThickness="2"
+                        Points="180,0 345,2 250,230 90,230" Canvas.Left="-140" Canvas.Top="59"/>
+                </Canvas>
+
+                <!--Main Track with white color matching UIC default view-->
+                <Rectangle Width="500" Height="120" Stroke="White" StrokeThickness="2" Fill="White"
+                   Margin="120,60,0,0"/>
+            </Canvas>
+        </Grid>
+            
+            <!--FIRST LATEST==============================-->
+            <Grid Margin="0 100 500 0" Visibility="{Binding DataContext.TrackLegRightUpVisibility, ElementName=TrackLegDirectionUserControl}">
+                <Canvas x:Name="TrackLegRightUpCanvas1" Width="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}" Height="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}">
+
+                    <!--Elements under this canvas should be collpased to get the design to match the UIC default view-->
+                    <Canvas x:Name="TrackLegRightUpCanvas2" Visibility="{Binding DataContext.TrackLegRightUpElementsVisibility, ElementName=TrackLegDirectionUserControl}">
+                        
+                        <Canvas>
+                            <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+            Points="204,-60 447,-58 328,230 90,230" Canvas.Left="395" Canvas.Top="-21"/>
+                        </Canvas>
+
+                        <Canvas>
+                            <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+            Points="183,150 219,150 187,230 148,230" Canvas.Left="367" Canvas.Top="-200"/>
+                        </Canvas>
+
+                        <Canvas>
+                            <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2"
+            Points="211,-85 257,-85 125,230 80,230" Canvas.Left="632" Canvas.Top="6"/>
+                        </Canvas>
+
+                        <Rectangle Width="415" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+               Margin="120,1,0,0"/>
+
+                        <Rectangle Width="500" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+               Margin="120,30,0,0"/>
+
+                        <Rectangle Width="500" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+               Margin="120,178,0,0"/>
+
+                        <Rectangle Width="620" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent"
+               Margin="120,207,0,0"/>
+                    </Canvas>
+
+                    <!--Main Track with white color matching UIC default view-->
+                    <Canvas>
+                        <Polygon Stroke="White" Fill="White" StrokeThickness="2"
+                Points="193,-29 355,-27 250,230 90,230" Canvas.Left="447" Canvas.Top="-51"/>
+                    </Canvas>
+
+                    <!--Main Track with white color matching UIC default view-->
+                    <Rectangle Width="500" Height="120" Stroke="White" StrokeThickness="2" Fill="White"
+           Margin="120,60,0,0"/>
+                </Canvas>
+            </Grid>
+
+            
+            
+            
+            
+            
+            
+            <!--LATEST ===================================================>-->
+            <Grid Margin="0 100 500 0" Visibility="{Binding DataContext.TrackLegRightDownVisibility, ElementName=TrackLegDirectionUserControl}">
+                <Canvas x:Name="TrackLegRightDownCanvas1" Width="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}" Height="{Binding DataContext.CanvasWidth, ElementName=TrackLegDirectionUserControl}">
+
+                    <!--Elements under this canvas should be collpased to get the design to match the UIC default view-->
+                    <Canvas x:Name="TrackLegRightDownCanvas2" Visibility="{Binding DataContext.TrackLegRightDownElementsVisibility, ElementName=TrackLegDirectionUserControl}">
+                        <Canvas>
+                            <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2" Points="172,120 212,120 250,230 211,230" Canvas.Left="343" Canvas.Top="89"/>
+                        </Canvas>
+
+                        <Canvas>
+                            <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2" Points="1,-29 229,-27 339,260 100,260" Canvas.Left="495" Canvas.Top="59"/>
+                        </Canvas>
+
+                        <Canvas>
+                            <Polygon Stroke="White" Fill="Transparent" StrokeThickness="2" Points="87,-88 138,-87 255,230 211,230" Canvas.Left="624" Canvas.Top="89"/>
+                        </Canvas>
+
+                        <Rectangle Width="415" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent" Margin="120,207,0,0"/>
+
+                        <Rectangle Width="500" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent" Margin="120,30,0,0"/>
+
+                        <Rectangle Width="500" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent" Margin="120,178,0,0"/>
+
+                        <Rectangle Width="620" Height="30" Stroke="White" StrokeThickness="2" Fill="Transparent" Margin="120,1,0,0"/>
+                    </Canvas>
+
+                    <!--Main Track with white color matching UIC default view-->
+                    <Canvas>
+                        <Polygon Stroke="White" Fill="White" StrokeThickness="2" Points="1,-29 155,-27 250,230 90,230" Canvas.Left="543" Canvas.Top="89"/>
+                    </Canvas>
+
+                    <!--Main Track with white color matching UIC default view-->
+                    <Rectangle Width="500" Height="120" Stroke="White" StrokeThickness="2" Fill="White" Margin="120,60,0,0"/>
+                </Canvas>
+            </Grid>
+
+
         </Grid>
     </Viewbox>
 </Page>
